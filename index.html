@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lintang Nuswantara</title>
+
+    <link href="/dist/output.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patua+One&family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Source Sans Pro", sans-serif;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      let divNav = document.getElementsByClassName("divNav")[0];
+      let btnNav = document.querySelector(".btnNav");
+      let open = document.querySelector(".open");
+      let menuNav = document.querySelector(".menuNav");
+
+      btnNav.addEventListener("click", function () {
+        if (divNav.classList.contains("pb-2")) {
+          divNav.classList.replace("pb-2", "pb-10");
+          divNav.classList.replace(
+            "animate-anim-navbar-close",
+            "animate-anim-navbar"
+          );
+
+          setTimeout(function () {
+            menuNav.classList.replace("hidden", "flex");
+          }, 200);
+        } else {
+          divNav.classList.replace("pb-10", "pb-2");
+          divNav.classList.replace(
+            "animate-anim-navbar",
+            "animate-anim-navbar-close"
+          );
+          menuNav.classList.replace("flex", "hidden");
+        }
+      });
+    </script>
+  </body>
+</html>
